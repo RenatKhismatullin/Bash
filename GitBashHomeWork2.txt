@@ -1,0 +1,295 @@
+admin@DESKTOP-7JBD020 MINGW64 ~/Desktop/QA/Bash_Training
+$ mkdir test3
+
+admin@DESKTOP-7JBD020 MINGW64 ~/Desktop/QA/Bash_Training
+$ cd test3
+
+admin@DESKTOP-7JBD020 MINGW64 ~/Desktop/QA/Bash_Training/test3
+$ touch 4.txt 5.txt 6.txt
+
+
+admin@DESKTOP-7JBD020 MINGW64 ~/Desktop/QA/Bash_Training/test3
+$ echo row1 > 4.txt
+
+admin@DESKTOP-7JBD020 MINGW64 ~/Desktop/QA/Bash_Training/test3
+$ echo row2 >> 4.txt
+
+admin@DESKTOP-7JBD020 MINGW64 ~/Desktop/QA/Bash_Training/test3
+$ echo row3 >> 4.txt
+
+admin@DESKTOP-7JBD020 MINGW64 ~/Desktop/QA/Bash_Training/test3
+$ echo row4 >> 4.txt
+
+admin@DESKTOP-7JBD020 MINGW64 ~/Desktop/QA/Bash_Training/test3
+$ cat 4.txt
+row1
+row2
+row3
+row4
+
+admin@DESKTOP-7JBD020 MINGW64 ~/Desktop/QA/Bash_Training/test3
+$ echo row1 > 5.txt
+
+admin@DESKTOP-7JBD020 MINGW64 ~/Desktop/QA/Bash_Training/test3
+$ echo row2 >> 5.txt
+
+admin@DESKTOP-7JBD020 MINGW64 ~/Desktop/QA/Bash_Training/test3
+$ echo row3 >> 5.txt
+
+admin@DESKTOP-7JBD020 MINGW64 ~/Desktop/QA/Bash_Training/test3
+$ echo row4 >> 5.txt
+
+admin@DESKTOP-7JBD020 MINGW64 ~/Desktop/QA/Bash_Training/test3
+$ cat 5.txt
+row1
+row2
+row3
+row4
+
+admin@DESKTOP-7JBD020 MINGW64 ~/Desktop/QA/Bash_Training/test3
+$ echo row1 > 6.txt
+
+admin@DESKTOP-7JBD020 MINGW64 ~/Desktop/QA/Bash_Training/test3
+$ echo row2 >> 6.txt
+
+admin@DESKTOP-7JBD020 MINGW64 ~/Desktop/QA/Bash_Training/test3
+$ echo row3 >> 6.txt                                                                                                                                                
+
+admin@DESKTOP-7JBD020 MINGW64 ~/Desktop/QA/Bash_Training/test3
+$ echo row4 >> 6.txt                                                                                                                                                
+
+admin@DESKTOP-7JBD020 MINGW64 ~/Desktop/QA/Bash_Training/test3
+$ cat 6.txt
+row1
+row2
+row3
+row4
+
+
+admin@DESKTOP-7JBD020 MINGW64 ~/Desktop/QA/Bash_Training/test3
+$ grep -i "row2" 5.txt
+row2
+
+admin@DESKTOP-7JBD020 MINGW64 ~/Desktop/QA/Bash_Training/test3
+$ grep -R "row" .
+./4.txt:row1
+./4.txt:row2
+./4.txt:row3
+./4.txt:row4
+./5.txt:row1
+./5.txt:row2
+./5.txt:row3
+./5.txt:row4
+./6.txt:row1
+./6.txt:row2
+./6.txt:row3
+./6.txt:row4
+
+
+admin@DESKTOP-7JBD020 MINGW64 ~/Desktop/QA/Bash_Training/test3
+$ grep row 6.txt -c
+4
+
+
+admin@DESKTOP-7JBD020 MINGW64 ~/Desktop/QA/Bash_Training/test3
+$ find . -type f -name 5.txt
+./5.txt
+
+
+admin@DESKTOP-7JBD020 MINGW64 ~/Desktop/QA/Bash_Training/test3
+$ find . 5.txt -delete
+find: ‘5.txt’: No such file or directory
+
+
+admin@DESKTOP-7JBD020 MINGW64 ~/Desktop/QA/Bash_Training/test3
+$ echo test >> 4.txt
+
+admin@DESKTOP-7JBD020 MINGW64 ~/Desktop/QA/Bash_Training/test3
+$ cat 4.txt
+row1
+row2
+row3
+row4
+test
+
+admin@DESKTOP-7JBD020 MINGW64 ~/Desktop/QA/Bash_Training/test3
+$ sed 's/test/fail/' 4.txt
+row1
+row2
+row3
+row4
+fail
+
+
+admin@DESKTOP-7JBD020 MINGW64 ~/Desktop/QA/Bash_Training/test3
+$ echo test >> 4.txt
+
+admin@DESKTOP-7JBD020 MINGW64 ~/Desktop/QA/Bash_Training/test3
+$ cat 4.txt
+row1
+row2
+row3
+row4
+test
+test
+
+
+
+
+
+
+admin@DESKTOP-7JBD020 MINGW64 ~/Desktop/QA/Bash_Training/test3
+$ ps
+      PID    PPID    PGID     WINPID   TTY         UID    STIME COMMAND
+     1447       1    1447       9460  ?         197609   Aug 25 /usr/bin/mintty
+     1448    1447    1448       2572  pty0      197609   Aug 25 /usr/bin/bash
+     2101    1955    2101      14784  cons0     197609 22:31:33 /usr/bin/ps
+     1955       1    1955       2612  cons0     197609 21:22:54 /usr/bin/bash
+
+admin@DESKTOP-7JBD020 MINGW64 ~/Desktop/QA/Bash_Training/test3
+$ ps aux
+      PID    PPID    PGID     WINPID   TTY         UID    STIME COMMAND
+     1447       1    1447       9460  ?         197609   Aug 25 /usr/bin/mintty
+     1448    1447    1448       2572  pty0      197609   Aug 25 /usr/bin/bash
+     2105    1955    2105      14624  cons0     197609 22:33:20 /usr/bin/ps
+     1955       1    1955       2612  cons0     197609 21:22:54 /usr/bin/bash
+
+admin@DESKTOP-7JBD020 MINGW64 ~/Desktop/QA/Bash_Training/test3
+$ cd ..
+
+admin@DESKTOP-7JBD020 MINGW64 ~/Desktop/QA/Bash_Training
+$ ps aux
+      PID    PPID    PGID     WINPID   TTY         UID    STIME COMMAND
+     1447       1    1447       9460  ?         197609   Aug 25 /usr/bin/mintty
+     1448    1447    1448       2572  pty0      197609   Aug 25 /usr/bin/bash
+     2112    1955    2112      15284  cons0     197609 22:34:50 /usr/bin/ps
+     1955       1    1955       2612  cons0     197609 21:22:54 /usr/bin/bash
+
+admin@DESKTOP-7JBD020 MINGW64 ~/Desktop/QA/Bash_Training
+$ ps
+      PID    PPID    PGID     WINPID   TTY         UID    STIME COMMAND
+     1447       1    1447       9460  ?         197609   Aug 25 /usr/bin/mintty
+     1448    1447    1448       2572  pty0      197609   Aug 25 /usr/bin/bash
+     2116    1955    2116       7572  cons0     197609 22:38:25 /usr/bin/ps
+     1955       1    1955       2612  cons0     197609 21:22:54 /usr/bin/bash
+
+admin@DESKTOP-7JBD020 MINGW64 ~/Desktop/QA/Bash_Training
+$  ps aux
+      PID    PPID    PGID     WINPID   TTY         UID    STIME COMMAND
+     1447       1    1447       9460  ?         197609   Aug 25 /usr/bin/mintty
+     1448    1447    1448       2572  pty0      197609   Aug 25 /usr/bin/bash
+     2120    1955    2120      17708  cons0     197609 22:38:40 /usr/bin/ps
+     1955       1    1955       2612  cons0     197609 21:22:54 /usr/bin/bash
+
+admin@DESKTOP-7JBD020 MINGW64 ~/Desktop/QA/Bash_Training
+$ ps -aux
+ps: user x unknown
+
+admin@DESKTOP-7JBD020 MINGW64 ~/Desktop/QA/Bash_Training
+$ ps lax
+      PID    PPID    PGID     WINPID   TTY         UID    STIME COMMAND
+     1447       1    1447       9460  ?         197609   Aug 25 /usr/bin/mintty
+     1448    1447    1448       2572  pty0      197609   Aug 25 /usr/bin/bash
+     2128    1955    2128      14592  cons0     197609 22:42:12 /usr/bin/ps
+     1955       1    1955       2612  cons0     197609 21:22:54 /usr/bin/bash
+
+admin@DESKTOP-7JBD020 MINGW64 ~/Desktop/QA/Bash_Training
+$ ps -ef
+     UID     PID    PPID  TTY        STIME COMMAND
+   admin    1447       1 ?          Aug 25 /usr/bin/mintty
+   admin    1448    1447 pty0       Aug 25 /usr/bin/bash
+   admin    1955       1 cons0    21:22:54 /usr/bin/bash
+   admin    2132    1955 cons0    22:43:43 /usr/bin/ps
+
+
+admin@DESKTOP-7JBD020 MINGW64 ~/Desktop/QA/Bash_Training
+$ top
+bash: top: command not found
+
+
+
+
+admin@DESKTOP-7JBD020 MINGW64 ~/Desktop/QA/Bash_Training
+$ kill -9 666
+bash: kill: (666) - No such process
+
+
+
+admin@DESKTOP-7JBD020 MINGW64 ~/Desktop/QA/Bash_Training
+$ ping artsiomrusau.com
+
+Pinging artsiomrusau.com [185.215.4.92] with 32 bytes of data:
+Request timed out.
+Request timed out.
+Request timed out.
+Request timed out.
+
+Ping statistics for 185.215.4.92:
+    Packets: Sent = 4, Received = 0, Lost = 4 (100% loss),
+
+admin@DESKTOP-7JBD020 MINGW64 ~/Desktop/QA/Bash_Training
+$ ping dzen.ru
+
+Pinging dzen.ru [62.217.160.2] with 32 bytes of data:
+Reply from 62.217.160.2: bytes=32 time=210ms TTL=44
+Reply from 62.217.160.2: bytes=32 time=199ms TTL=44
+Reply from 62.217.160.2: bytes=32 time=206ms TTL=44
+Reply from 62.217.160.2: bytes=32 time=222ms TTL=44
+
+Ping statistics for 62.217.160.2:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 199ms, Maximum = 222ms, Average = 209ms
+
+
+
+admin@DESKTOP-7JBD020 MINGW64 ~/Desktop/QA/Bash_Training
+$ ping -n 5 artsiomrusau.com
+
+Pinging artsiomrusau.com [185.215.4.92] with 32 bytes of data:
+Request timed out.
+Request timed out.
+Request timed out.
+Request timed out.
+Request timed out.
+
+Ping statistics for 185.215.4.92:
+    Packets: Sent = 5, Received = 0, Lost = 5 (100% loss),
+
+admin@DESKTOP-7JBD020 MINGW64 ~/Desktop/QA/Bash_Training
+$ ping -n 5 dzen.ru
+
+Pinging dzen.ru [62.217.160.2] with 32 bytes of data:
+Reply from 62.217.160.2: bytes=32 time=198ms TTL=44
+Reply from 62.217.160.2: bytes=32 time=215ms TTL=44
+Reply from 62.217.160.2: bytes=32 time=198ms TTL=44
+Reply from 62.217.160.2: bytes=32 time=198ms TTL=44
+Reply from 62.217.160.2: bytes=32 time=203ms TTL=44
+
+Ping statistics for 62.217.160.2:
+    Packets: Sent = 5, Received = 5, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 198ms, Maximum = 215ms, Average = 202ms
+
+
+
+$ curl -X  GET https://petstore.swagger.io/v2/pet/findByStatus?status=available
+[{"id":2,"category":{"id":1,"name":"Cat"},"name":"Kitty2","photoUrls":["string"],"tags":[{"id":1,"name":"cute"}],"status":"available"},{"id":4,"category":{"id":1,"name":"Dogs"},"name":"Dog 1","photoUrls":["url1","url2"],"tags":[{"id":1,"name":"tag1"},{"id":2,"name":"tag2"}],"status":"available"},{"id":8,"category":{"id":4,"name":"Lions"},"name":"Lion 2","photoUrls":["url1","url2"],"tags":[{"id":1,"name":"tag2"},{"id":2,"name":"tag3"}],"status":"available"},{"id":9,"category":{"id":4,"name":"Lions"},"name":"Lion 3","photoUrls":["url1","url2"],"tags":[{"id":1,"name":"tag3"},{"id":2,"name":"tag4"}],"status":"available"},{"id":10,"category":{"id":10,"name":"sample string"},"name":"doggie","photoUrls":["sample 1","sample 2","sample 3"],"tags":[{"id":10,"name":"sample string"},{"id":10,"name":"sample string"}],"status":"available"},{"id":11,"category":{"id":0,"name":"string"},"name":"Puff","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"available"},{"id":12,"category":{"id":1,"name":"string"},"name":"doggie","photoUrls":["string"],"tags":[{"id":1,"name":"string"}],"status":"available"},{"id":13,"category":{"id":0,"name":"string"},"name":"doggie","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"available"},{"id":14,"category":{"id":0,"name":"string"},"name":"doggie","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"available"},{"id":15,"category":{"id":0,"name":"string"},"name":"doggie","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"available"},{"id":20,"category":{"id":0,"name":"string"},"name":"fish","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"available"},{"id":21,"category":{"id":0,"name":"string"},"name":"fish","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"available"},{"id":22,"category":{"id":0,"name":"string"},"name":"fish","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"available"},{"id":48,"name":"pet48","photoUrls":["string"],"tags":[],"status":"available"},{"id":9222968140497180179,"category":{"id":0,"name":"string"},"name":"test","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"available"},{"id":9222968140497180199,"category":{"id":0,"name":"string"},"name":"fish","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"available"},{"id":9222968140497180201,"category":{"id":0,"name":"string"},"name":"doggie","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"available"},{"id":9222968140497180207,"category":{"id":0,"name":"string"},"name":"Puff","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"available"},{"id":9222968140497180208,"category":{"id":0,"name":"string"},"name":"fish","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"available"},{"id":9222968140497180209,"category":{"id":0,"name":"string"},"name":"doggie","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"available"},{"id":9222968140497180210,"category":{"id":0,"name":"string"},"name":"doggie","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"available"},{"id":9222968140497180211,"category":{"id":0,"name":"string"},"name":"fish","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"available"},{"id":9222968140497180212,"category":{"id":0,"name":"string"},"name":"doggie","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"available"},{"id":9222968140497180213,"category":{"id":0,"name":"string"},"name":"doggie","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"available"},{"id":99996,"name":"doggie_by_ms","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"available"},{"id":9223372016900001111,"category":{"id":0,"name":"string"},"name":"birdie","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"available"},{"id":9223372016900001122,"name":"siyaan","photoUrls":[],"tags":[],"status":"available"},{"id":15555,"category":{"id":0,"name":"puppy"},"name":"doggie","photoUrls":["string"],"tags":[{"id":0,"name":"Charlie"}],"status":"available"},{"id":123,"category":{"id":0,"name":"string"},"name":"doggie","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"available"},{"id":9223372016900001130,"category":{"id":0,"name":"string"},"name":"fish","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"available"},{"id":9223372016900001139,"category":{"id":0,"name":"string"},"name":"fish","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"available"},{"id":9223372016900001140,"category":{"id":0,"name":"string"},"name":"fish","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"available"},{"id":112233,"category":{"id":30,"name":"Eq-dog"},"name":"Postman","photoUrls":["URLLink"],"tags":[{"id":10,"name":"Doberman"}],"status":"available"},{"id":9223372016900001144,"category":{"id":0,"name":"string"},"name":"Puff","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"available"},{"id":9223372016900001145,"category":{"id":0,"name":"string"},"name":"doggie","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"available"},{"id":9223372016900001146,"category":{"id":0,"name":"string"},"name":"doggie","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"available"},{"id":9223372016900001147,"category":{"id":0,"name":"string"},"name":"doggie","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"available"},{"id":9223372016900001148,"category":{"id":0,"name":"string"},"name":"doggie","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"available"},{"id":9223372016900001149,"category":{"id":0,"name":"string"},"name":"fish","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"available"},{"id":9223372016900001152,"category":{"id":0,"name":"string"},"name":"fish","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"available"},{"id":9223372016900001155,"category":{"id":0,"name":"string"},"name":"fish","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"available"},{"id":9223372016900001168,"name":"siyaan","photoUrls":[],"tags":[],"status":"available"},{"id":9223372016900001182,"category":{"id":0,"name":"string"},"name":"fish","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"available"},{"id":9223372016900001183,"category":{"id":0,"name":"string"},"name":"fish","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"available"},{"id":9223372016900001186,"category":{"id":0,"name":"Dog"},"name":"Amar","photoUrls":[""],"tags":[{"id":0,"name":"dog"}],"status":"available"},{"id":8979789078978911,"category":{"id":111,"name":"akita dog"},"name":"doggie","photoUrls":["photo URL"],"tags":[],"status":"available"},{"id":9223372016900001189,"category":{"id":0,"name":"string"},"name":"Puff","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"available"},{"id":9223372016900001192,"category":{"id":0,"name":"string"},"name":"doggie","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"available"},{"id":9223372016900001193,"category":{"id":0,"name":"string"},"name":"doggie","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"available"},{"id":9223372016900001194,"category":{"id":0,"name":"string"},"name":"fish","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"available"},{"id":9223372016900001195,"category":{"id":0,"name":"string"},"name":"morce","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"available"},{"id":9223372016900001196,"category":{"id":0,"name":"string"},"name":"doggie","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"available"},{"id":9223372016900001197,"category":{"id":0,"name":"string"},"name":"doggie","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"available"},{"id":9223372016900001198,"category":{"id":-9938561,"name":"labore ea"},"name":"doggie","photoUrls":["proident deserunt","ut anim minim"],"tags":[{"id":30819124,"name":"eiusmod sed quis"},{"id":39808646,"name":"in enim incididunt anim"}],"status":"available"},{"id":9223372016900001205,"category":{"id":0,"name":"string"},"name":"doggie","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"available"},{"id":9223372016900001210,"category":{"id":0,"name":"string"},"name":"doggie","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"available"},{"id":9223372016900001221,"category":{"id":0,"name":"string"},"name":"fish","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"available"},{"id":9223372016900001225,"category":{"id":0,"name":"Pomeranian"},"name":"Yeontn","photoUrls":["https://www.google.com/url?sa=i&url=https%3A%2F%2Fwikibio.in%2Fyeontan%2F&psig=AOvVaw0UdJeOGlk-jKSOtT-nplW1&ust=1682581409377000&source=images&cd=vfe&ved=0CA4QjRxqFwoTCMCQvJiuyP4CFQAAAAAdAAAAABAI"],"tags":[{"id":0,"name":"Dog"}],"status":"available"},{"id":420,"category":{"id":42,"name":"Chihuahua"},"name":"PasBre","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"available"},{"id":9223372016900001229,"category":{"id":0,"name":"string"},"name":"fish","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"available"},{"id":9223372016900001230,"category":{"id":0,"name":"string"},"name":"fish","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"available"},{"id":9223372016900001236,"category":{"id":0,"name":"string"},"name":"Puff","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"available"},{"id":9223372016900001238,"category":{"id":0,"name":"string"},"name":"doggie","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"available"},{"id":9223372016900001239,"category":{"id":0,"name":"string"},"name":"doggie","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"available"},{"id":9223372016900001242,"category":{"id":0,"name":"string"},"name":"doggie","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"available"},{"id":9223372016900001243,"category":{"id":0,"name":"string"},"name":"doggie","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"available"},{"id":9223372016900001244,"category":{"id":0,"name":"string"},"name":"fish","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"available"},{"id":9223372016900001245,"category":{"id":0,"name":"string"},"name":"fish","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"available"},{"id":9223372016900001267,"category":{"id":0,"name":"string"},"name":"fish","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"available"},{"id":9223372016900001268,"category":{"id":0,"name":"string"},"name":"fish","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"available"},{"id":9223372016900001272,"category":{"id":0,"name":"string"},"name":"Puff","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"available"},{"id":9223372016900001274,"category":{"id":0,"name":"string"},"name":"doggie","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"available"},{"id":9223372016900001275,"category":{"id":0,"name":"string"},"name":"doggie","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"available"},{"id":9223372016900001278,"category":{"id":0,"name":"string"},"name":"fish","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"available"},{"id":9223372016900001279,"category":{"id":0,"name":"string"},"name":"doggie","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"available"},{"id":9223372016900001280,"category":{"id":0,"name":"string"},"name":"doggie","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"available"},{"id":9223372016900001311,"category":{"id":0,"name":"string"},"name":"fish","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"available"},{"id":9223372016900001322,"category":{"id":0,"name":"string"},"name":"fish","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"available"},{"id":9223372016900001325,"category":{"id":0,"name":"string"},"name":"fish","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"available"},{"id":9223372016900001326,"category":{"id":0,"name":"string"},"name":"Puff","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"available"},{"id":9223372016900001330,"category":{"id":0,"name":"string"},"name":"doggie","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"available"},{"id":9223372016900001331,"category":{"id":0,"name":"string"},"name":"doggie","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"available"},{"id":1245,"category":{"id":1245,"name":"xyz"},"name":"xyz","photoUrls":["test"],"tags":[],"status":"available"},{"id":9223372016900001343,"category":{"id":0,"name":"string"},"name":"doggie","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"available"},{"id":9223372016900001344,"category":{"id":0,"name":"string"},"name":"doggie","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"available"},{"id":9223372016900001346,"category":{"id":0,"name":"string"},"name":"fish","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"available"},{"id":9223372016900001347,"category":{"id":0,"name":"string"},"name":"fish","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"available"},{"id":9223372016900001348,"category":{"id":0,"name":"string"},"name":"fish","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"available"},{"id":99,"name":"pet99","photoUrls":["string"],"tags":[],"status":"available"},{"id":9223372016900001365,"category":{"id":0,"name":"string"},"name":"doggie","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"available"}]
+
+
+admin@DESKTOP-7JBD020 MINGW64 ~/Desktop/QA/Bash_Training
+$ curl -X 'POST' \
+>   'https://petstore.swagger.io/v2/user' \
+>   -H 'accept: application/json' \
+>   -H 'Content-Type: application/json' \
+>   -d '{
+>   "id": 0,
+>   "username": "string",
+>   "firstName": "string",
+>   "lastName": "string",
+>   "email": "string",
+>   "password": "string",
+>   "phone": "string",
+>   "userStatus": 0
+> }'
+{"code":200,"type":"unknown","message":"6874986297"}
